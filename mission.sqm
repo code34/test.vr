@@ -8,11 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=3;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={3148.1208,15,1127.5209};
+		pos[]={3144.7454,11.132168,1138.976};
 		dir[]={-0.20248279,-0.35768098,0.91163307};
 		up[]={-0.077554628,0.93384486,0.34917289};
 		aside[]={0.97621506,-1.8742867e-008,0.2168275};
@@ -21,17 +21,25 @@ class EditorData
 binarizationWanted=0;
 addons[]=
 {
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Structures_F_Bootcamp_VR_CoverObjects"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Structures_F_Bootcamp";
+			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -63,7 +71,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			dataType="Group";
@@ -107,6 +115,22 @@ class Mission
 			};
 			id=2;
 			type="EmptyDetector";
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3143.4399,5.415,1153.415};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="toto";
+			};
+			id=3;
+			type="Land_VR_CoverObject_01_kneel_F";
 		};
 	};
 };
