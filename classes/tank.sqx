@@ -1,0 +1,74 @@
+/*
+ * Name:	tank
+ * File:	tank.sqx
+ * Date:	22/01/2018 (21:27)
+ * Version: 1.0
+ * Author:  nobody
+ *
+ * Description:
+ * Class that models a Tank. The file contains a fully working class (no analyzer or compile errors), as a
+ * demo of the SQX class syntax. It is however essentially empty, i.e. its methods do nothing but displaying
+ * hints. As a demo, this class contains most of the available SQX features. For a full API Reference, visit
+ * www.typesqf.com.
+ *
+ * You can add, edit and remove these templates. Simply edit the files in the folder 'Templates' located in
+ * the Application Data folder. If the 'Templates' folder does not exist, then it, and its content, 
+ * will be created when TypeSqf starts.
+ */
+namespace tank
+{
+	public class tank
+	{
+		// Fields:
+		// _mTankUnit (Object):  Holds the actual vehicle object.
+		// _mSpawnPos (Array): Holds the starting position of the tank.
+		private fields["_mTankUnit" as Object, "_mSpawnPos" as Array];
+
+		// Creates a tank object and spawns it with crew on the specified position.
+		// Parameter(s):
+		// _spawnPos: The position where to spawn the tank.
+		public constructor {
+			params ["_spawnPos" as Array];
+
+			_mSpawnPos = _spawnPos;
+			_mTankUnit = objNull;
+			call _self.Respawn;
+		};
+
+		// Gets the status of the tank's movement.
+		public property String Status { get; private set; };
+
+		// Removes and respawns the tank on its starting position.
+		public method Respawn
+		{
+			if (!isNull _mTankUnit) then
+			{
+				{
+					deleteVehicle _x;
+				} foreach crew _mTankUnit;
+
+				deleteVehicle _mTankUnit;
+			};
+
+			_mTankUnit = "B_MBT_01_cannon_F" createVehicle _mSpawnPos;
+			createVehicleCrew _mTankUnit;
+			_self.Status = "IDLE";
+		};
+
+		// Attacks a position.
+		// Parameter(s):
+		// _position: The position to attack as an array ([x, y, z]).
+		// Returns: true if it is able to carry out an attack, otherwise false.
+		public method Boolean AttackPosition {
+			params ["_position" as Array];
+			private ["_waypoint"];
+
+			_waypoint = (group _mTankUnit) addWaypoint[_position, 0];
+			_waypoint setWaypointType "SAD";
+			_waypoint setWaypointBehaviour "COMBAT";
+
+			_self.Status = "ATTACKING";
+		};
+	};
+};
+

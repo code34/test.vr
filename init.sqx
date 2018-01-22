@@ -1,0 +1,21 @@
+call compile preprocessFileLineNumbers "classes\crowd.sqx";
+
+using typesqf.examples;
+
+private "_crowd" as Crowd;
+
+sleep 3;
+
+_crowd = "" new Crowd;
+
+sleep 3;
+
+hint format ["%1", call _crowd.getText];
+
+sleep 3;
+
+hint format ["%1", _crowd.allworlds];
+
+sleep 3;
+
+hint format ["%1", _crowd.BlowUpTank];

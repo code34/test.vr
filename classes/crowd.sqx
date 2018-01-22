@@ -1,0 +1,32 @@
+namespace typesqf.examples {
+	public class Crowd {
+		private fields ["_mareamarker" as String, "_munits" as Array, "_mnumber" as Scalar];
+
+		public constructor {
+			_mareamarker = "hello";
+			_munits = [];
+			_mnumber = 0;
+			_self.allworlds = "JIM";
+		};
+
+		public property String allworlds { get; private set; };
+
+		public method getText{
+			_mareamarker;
+		};
+		
+		public method getArray {
+			_munits;
+		};
+		
+		public method add {
+			params ["_count" as Scalar];
+			_mnumber = _mnumber + _count;
+		};
+		
+		public static method BlowUpTank {
+			params ["_tank" as Crowd];
+			hint "BOOM!";
+		};
+	};
+};
