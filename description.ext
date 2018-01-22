@@ -16,15 +16,23 @@ class menuprincipal {
 			w = 159.675 * pixelGrid * pixelW;
 			h = 86.6667 * pixelGrid * pixelH;
 			class controls{
-				class OOP_SubLayer_101_101 : OOP_SubLayer {
+				class monbackground_101 : OOP_SubLayer {
 					idc = 101;
-					x = 47.9025 * pixelGrid * pixelW;
-					y = 22.5333 * pixelGrid * pixelH;
+					x = 35.9269 * pixelGrid * pixelW;
+					y = 17.3333 * pixelGrid * pixelH;
 					w = 59.8781 * pixelGrid * pixelW;
 					h = 45.0667 * pixelGrid * pixelH;
 					class controls{
-						class Temperature_102: OOP_Button {
-							idc = 102;
+						class OOP_Picture_109_109: OOP_Picture {
+							idc = 109;
+							x = 0.2515 * pixelGrid * pixelW;
+							y = 0.182 * pixelGrid * pixelH;
+							w = 59.6266 * pixelGrid * pixelW;
+							h = 44.8847 * pixelGrid * pixelH;
+							text = "#(rgb,8,8,3)color(1,1,1,1)";
+						};
+						class Temperature_103: OOP_Button {
+							idc = 103;
 							x = 41.9147 * pixelGrid * pixelW;
 							y = 3.46667 * pixelGrid * pixelH;
 							w = 15.9675 * pixelGrid * pixelW;
@@ -32,8 +40,8 @@ class menuprincipal {
 							text = "Temperature";
 							action = "'btnAction_Temperature' call menuprincipal;";
 						};
-						class Radio_103: OOP_Button {
-							idc = 103;
+						class Radio_104: OOP_Button {
+							idc = 104;
 							x = 41.9147 * pixelGrid * pixelW;
 							y = 13.8667 * pixelGrid * pixelH;
 							w = 15.9675 * pixelGrid * pixelW;
@@ -41,8 +49,8 @@ class menuprincipal {
 							text = "Radio";
 							action = "'btnAction_Radio' call menuprincipal;";
 						};
-						class Team_104: OOP_Button {
-							idc = 104;
+						class Team_105: OOP_Button {
+							idc = 105;
 							x = 41.9147 * pixelGrid * pixelW;
 							y = 24.2667 * pixelGrid * pixelH;
 							w = 15.9675 * pixelGrid * pixelW;
@@ -50,8 +58,8 @@ class menuprincipal {
 							text = "Team";
 							action = "'btnAction_Team' call menuprincipal;";
 						};
-						class Emergency_105: OOP_Button {
-							idc = 105;
+						class Emergency_106: OOP_Button {
+							idc = 106;
 							x = 41.9147 * pixelGrid * pixelW;
 							y = 34.6667 * pixelGrid * pixelH;
 							w = 15.9675 * pixelGrid * pixelW;
@@ -59,20 +67,35 @@ class menuprincipal {
 							text = "Emergency";
 							action = "'btnAction_Emergency' call menuprincipal;";
 						};
-						class OOP_Listbox_106_106: OOP_Listbox {
-							idc = 106;
-							x = 1.99594 * pixelGrid * pixelW;
-							y = 3.46667 * pixelGrid * pixelH;
-							w = 37.9228 * pixelGrid * pixelW;
-							h = 39.8667 * pixelGrid * pixelH;
-						};
-						class OOP_Text_107_107: OOP_Text {
-							idc = 107;
+						class OOP_Text_108_108: OOP_Text {
+							idc = 108;
 							x = 0.2515 * pixelGrid * pixelW;
 							y = 0.182 * pixelGrid * pixelH;
 							w = 33.6794 * pixelGrid * pixelW;
 							h = 3.28467 * pixelGrid * pixelH;
 							text = "La galere - Nous sommes lÃ©gions !";
+						};
+						class listebas_110: OOP_Listbox {
+							idc = 110;
+							x = 1.99594 * pixelGrid * pixelW;
+							y = 24.2667 * pixelGrid * pixelH;
+							w = 37.9228 * pixelGrid * pixelW;
+							h = 19.0667 * pixelGrid * pixelH;
+							text = "listebad";
+							canDrag=true;
+							onLBDrag = "with missionNamespace do{['onLBDrag_listebas', _this] call menuprincipal;}";
+							onLBDrop = "with missionNamespace do{['onLBDrop_listebas', _this] call menuprincipal;}";
+						};
+						class listehaut_111: OOP_Listbox {
+							idc = 111;
+							x = 1.99594 * pixelGrid * pixelW;
+							y = 3.46667 * pixelGrid * pixelH;
+							w = 37.9228 * pixelGrid * pixelW;
+							h = 19.0667 * pixelGrid * pixelH;
+							text = "listehaut";
+							canDrag=true;
+							onLBDrag = "with missionNamespace do{ ['onLBDrag_listehaut', _this] call menuprincipal;}";
+							onLBDrop = "with missionNamespace do{ ['onLBDrop_listehaut', _this] call menuprincipal;}";
 						};
 					};
 				};
@@ -83,5 +106,5 @@ class menuprincipal {
 };
 
 /*
-["menuprincipal",1000,[[[["47.9025 * pixelGrid * pixelW","22.5333 * pixelGrid * pixelH","59.8781 * pixelGrid * pixelW","45.0667 * pixelGrid * pixelH"],"","","","OOP_SubLayer",true,[],[-1,-1,-1,-1],[1,1,1,0.2],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]],[[[["41.9147 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Temperature","Temperature","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","13.8667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Radio","Radio","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","24.2667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Team","Team","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","34.6667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Emergency","Emergency","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH","37.9228 * pixelGrid * pixelW","39.8667 * pixelGrid * pixelH"],"","","","OOP_Listbox",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["0.2515 * pixelGrid * pixelW","0.182 * pixelGrid * pixelH","33.6794 * pixelGrid * pixelW","3.28467 * pixelGrid * pixelH"],"La galere - Nous sommes lÃ©gions !","","","OOP_Text",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]]]]]]
+["menuprincipal",1000,[[[["35.9269 * pixelGrid * pixelW","17.3333 * pixelGrid * pixelH","59.8781 * pixelGrid * pixelW","45.0667 * pixelGrid * pixelH"],"monbackground","monbackground","","OOP_SubLayer",true,[],[-1,-1,-1,-1],[1,1,1,0.2],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]],[[[["0.2515 * pixelGrid * pixelW","0.182 * pixelGrid * pixelH","59.6266 * pixelGrid * pixelW","44.8847 * pixelGrid * pixelH"],"#(rgb,8,8,3)color(1,1,1,1)","","","OOP_Picture",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Temperature","Temperature","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","13.8667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Radio","Radio","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","24.2667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Team","Team","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","34.6667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","8.66667 * pixelGrid * pixelH"],"Emergency","Emergency","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["0.2515 * pixelGrid * pixelW","0.182 * pixelGrid * pixelH","33.6794 * pixelGrid * pixelW","3.28467 * pixelGrid * pixelH"],"La galere - Nous sommes lÃ©gions !","","","OOP_Text",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","24.2667 * pixelGrid * pixelH","37.9228 * pixelGrid * pixelW","19.0667 * pixelGrid * pixelH"],"listebad","listebas","","OOP_Listbox",true,["onLBDrag","onLBDrop"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH","37.9228 * pixelGrid * pixelW","19.0667 * pixelGrid * pixelH"],"listehaut","listehaut","","OOP_Listbox",true,["onLBDrag","onLBDrop"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]]]]]]
 */
