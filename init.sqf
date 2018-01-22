@@ -1,5 +1,5 @@
-	call compile preprocessFileLineNumbers "oo_menuprincipal.sqf";
+	call compile preprocessFileLineNumbers "oo_AroundInterface.sqf";
 
 	sleep 2;
 
-	createDialog "menuprincipal";
+	createDialog "AroundInterface";

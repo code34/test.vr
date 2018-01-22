@@ -1,13 +1,13 @@
 #include "define.hpp"
 #include "style.hpp"
 
-class menuprincipal {
+class AroundInterface {
 	idd = 1000;
-	name= "menuprincipal";
+	name= "AroundInterface";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "with missionNamespace do{menuprincipal = ['new', _this select 0] call oo_menuprincipal;};";
-	onUnload = "with missionNamespace do{['delete',menuprincipal] call oo_menuprincipal;};";
+	onLoad = "with missionNamespace do{AroundInterface = ['new', _this select 0] call oo_AroundInterface;};";
+	onUnload = "with missionNamespace do{['delete',AroundInterface] call oo_AroundInterface;};";
 	class controlsBackground {
 		class OOP_MainLayer_100_100 : OOP_MainLayer {
 			idc = 100;
@@ -16,84 +16,118 @@ class menuprincipal {
 			w = 159.675 * pixelGrid * pixelW;
 			h = 86.6667 * pixelGrid * pixelH;
 			class controls{
-				class monbackground_101 : OOP_SubLayer {
+				class OOP_Picture_101_101: OOP_Picture {
 					idc = 101;
-					x = 43.9106 * pixelGrid * pixelW;
-					y = 20.8 * pixelGrid * pixelH;
-					w = 59.8781 * pixelGrid * pixelW;
-					h = 45.0667 * pixelGrid * pixelH;
+					x = 26.4558 * pixelGrid * pixelW;
+					y = 4.46666 * pixelGrid * pixelH;
+					w = 118.256 * pixelGrid * pixelW;
+					h = 74.5333 * pixelGrid * pixelH;
+					text = "coffre.jpg";
+				};
+				class OOP_SubLayer_102_102 : OOP_SubLayer {
+					idc = 102;
+					x = 89.8172 * pixelGrid * pixelW;
+					y = 31.2 * pixelGrid * pixelH;
+					w = 25.9472 * pixelGrid * pixelW;
+					h = 31.2 * pixelGrid * pixelH;
 					class controls{
-						class OOP_Picture_102_102: OOP_Picture {
-							idc = 102;
-							x = 0.2515 * pixelGrid * pixelW;
-							y = 0.182 * pixelGrid * pixelH;
-							w = 59.6266 * pixelGrid * pixelW;
-							h = 44.8847 * pixelGrid * pixelH;
-							text = "#(rgb,8,8,3)color(1,1,1,1)";
-						};
-						class Temperature_103: OOP_Button {
+						class picturefond_103: OOP_Picture {
 							idc = 103;
-							x = 41.9147 * pixelGrid * pixelW;
-							y = 3.46667 * pixelGrid * pixelH;
-							w = 15.9675 * pixelGrid * pixelW;
-							h = 5.2 * pixelGrid * pixelH;
-							text = "Temperature";
-							action = "'btnAction_Temperature' call menuprincipal;";
-						};
-						class Radio_104: OOP_Button {
-							idc = 104;
-							x = 41.9147 * pixelGrid * pixelW;
-							y = 10.4 * pixelGrid * pixelH;
-							w = 15.9675 * pixelGrid * pixelW;
-							h = 5.2 * pixelGrid * pixelH;
-							text = "Radio";
-							action = "'btnAction_Radio' call menuprincipal;";
-						};
-						class Team_105: OOP_Button {
-							idc = 105;
-							x = 41.9147 * pixelGrid * pixelW;
-							y = 17.3333 * pixelGrid * pixelH;
-							w = 15.9675 * pixelGrid * pixelW;
-							h = 5.2 * pixelGrid * pixelH;
-							text = "Team";
-							action = "'btnAction_Team' call menuprincipal;";
-						};
-						class Emergency_106: OOP_Button {
-							idc = 106;
-							x = 41.9147 * pixelGrid * pixelW;
-							y = 24.2667 * pixelGrid * pixelH;
-							w = 15.9675 * pixelGrid * pixelW;
-							h = 5.2 * pixelGrid * pixelH;
-							text = "Emergency";
-							action = "'btnAction_Emergency' call menuprincipal;";
-						};
-						class OOP_Text_107_107: OOP_Text {
-							idc = 107;
 							x = 0.2515 * pixelGrid * pixelW;
 							y = 0.182 * pixelGrid * pixelH;
-							w = 33.6794 * pixelGrid * pixelW;
-							h = 3.28467 * pixelGrid * pixelH;
-							text = "La galere - Nous sommes lÃ©gions !";
+							w = 55.6348 * pixelGrid * pixelW;
+							h = 53.7334 * pixelGrid * pixelH;
+							text = "#(rgb,8,8,3)color(1,1,1,0.11)";
+							colorBackground[] = {1, 1, 1, 0.2};
 						};
-						class listebas_108: OOP_Listbox {
+						class button2_104: OOP_Button {
+							idc = 104;
+							x = 9.97969 * pixelGrid * pixelW;
+							y = 1.73333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "2";
+							action = "'btnAction_button2' call AroundInterface;";
+						};
+						class button1_105: OOP_Button {
+							idc = 105;
+							x = 1.99594 * pixelGrid * pixelW;
+							y = 1.73333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "1";
+							action = "'btnAction_button1' call AroundInterface;";
+						};
+						class button3_106: OOP_Button {
+							idc = 106;
+							x = 17.9634 * pixelGrid * pixelW;
+							y = 1.73333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "3";
+							action = "'btnAction_button3' call AroundInterface;";
+						};
+						class button4_107: OOP_Button {
+							idc = 107;
+							x = 1.99594 * pixelGrid * pixelW;
+							y = 6.93333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "4";
+							action = "'btnAction_button4' call AroundInterface;";
+						};
+						class button5_108: OOP_Button {
 							idc = 108;
-							x = 1.99594 * pixelGrid * pixelW;
-							y = 24.2667 * pixelGrid * pixelH;
-							w = 37.9228 * pixelGrid * pixelW;
-							h = 19.0667 * pixelGrid * pixelH;
-							text = "listebad";
-							onLBDrag = "['onLBDrag_listebas', _this] call menuprincipal;";
-							onLBDrop = "['onLBDrop_listebas', _this] call menuprincipal;";
+							x = 9.97969 * pixelGrid * pixelW;
+							y = 6.93333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "5";
+							action = "'btnAction_button5' call AroundInterface;";
 						};
-						class listehaut_109: OOP_Listbox {
+						class button6_109: OOP_Button {
 							idc = 109;
+							x = 17.9634 * pixelGrid * pixelW;
+							y = 6.93333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "6";
+							action = "'btnAction_button6' call AroundInterface;";
+						};
+						class affichage_110: OOP_Edit {
+							idc = 110;
 							x = 1.99594 * pixelGrid * pixelW;
-							y = 3.46667 * pixelGrid * pixelH;
-							w = 37.9228 * pixelGrid * pixelW;
-							h = 19.0667 * pixelGrid * pixelH;
-							text = "listehaut";
-							onLBDrag = "['onLBDrag_listehaut', _this] call menuprincipal;";
-							onLBDrop = "['onLBDrop_listehaut', _this] call menuprincipal;";
+							y = 17.3333 * pixelGrid * pixelH;
+							w = 21.9553 * pixelGrid * pixelW;
+							h = 12.1333 * pixelGrid * pixelH;
+							text = "resultat: ";
+						};
+						class button7_111: OOP_Button {
+							idc = 111;
+							x = 1.99594 * pixelGrid * pixelW;
+							y = 12.1333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "7";
+							action = "'btnAction_button7' call AroundInterface;";
+						};
+						class button8_112: OOP_Button {
+							idc = 112;
+							x = 9.97969 * pixelGrid * pixelW;
+							y = 12.1333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "8";
+							action = "'btnAction_button8' call AroundInterface;";
+						};
+						class button9_113: OOP_Button {
+							idc = 113;
+							x = 17.9634 * pixelGrid * pixelW;
+							y = 12.1333 * pixelGrid * pixelH;
+							w = 5.98781 * pixelGrid * pixelW;
+							h = 3.46667 * pixelGrid * pixelH;
+							text = "9";
+							action = "'btnAction_button9' call AroundInterface;";
 						};
 					};
 				};
@@ -104,6 +138,7 @@ class menuprincipal {
 };
 
 /*
-["menuprincipal",1000,[[[["43.9106 * pixelGrid * pixelW","20.8 * pixelGrid * pixelH","59.8781 * pixelGrid * pixelW","45.0667 * pixelGrid * pixelH"],"monbackground","monbackground","","OOP_SubLayer",true,[],[-1,-1,-1,-1],[1,1,1,0.2],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]],[[[["0.2515 * pixelGrid * pixelW","0.182 * pixelGrid * pixelH","59.6266 * pixelGrid * pixelW","44.8847 * pixelGrid * pixelH"],"#(rgb,8,8,3)color(1,1,1,1)","","","OOP_Picture",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","5.2 * pixelGrid * pixelH"],"Temperature","Temperature","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","10.4 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","5.2 * pixelGrid * pixelH"],"Radio","Radio","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","17.3333 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","5.2 * pixelGrid * pixelH"],"Team","Team","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["41.9147 * pixelGrid * pixelW","24.2667 * pixelGrid * pixelH","15.9675 * pixelGrid * pixelW","5.2 * pixelGrid * pixelH"],"Emergency","Emergency","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["0.2515 * pixelGrid * pixelW","0.182 * pixelGrid * pixelH","33.6794 * pixelGrid * pixelW","3.28467 * pixelGrid * pixelH"],"La galere - Nous sommes lÃ©gions !","","","OOP_Text",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","24.2667 * pixelGrid * pixelH","37.9228 * pixelGrid * pixelW","19.0667 * pixelGrid * pixelH"],"listebad","listebas","","OOP_Listbox",true,["onLBDrag","onLBDrop"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH","37.9228 * pixelGrid * pixelW","19.0667 * pixelGrid * pixelH"],"listehaut","listehaut","","OOP_Listbox",true,["onLBDrag","onLBDrop"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]]]]]]
+["AroundInterface",1000,[[[["26.4558 * pixelGrid * pixelW","4.46666 * pixelGrid * pixelH","118.256 * pixelGrid * pixelW","74.5333 * pixelGrid * pixelH"],"coffre.jpg","","","OOP_Picture",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["89.8172 * pixelGrid * pixelW","31.2 * pixelGrid * pixelH","25.9472 * pixelGrid * pixelW","31.2 * pixelGrid * pixelH"],"","","","OOP_SubLayer",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]],[[[["0.2515 * pixelGrid * pixelW","0.182 * pixelGrid * pixelH","55.6348 * pixelGrid * pixelW","53.7334 * pixelGrid * pixelH"],"#(rgb,8,8,3)color(1,1,1,0.11)","picturefond","","OOP_Picture",true,[],[-1,-1,-1,-1],[1,1,1,0.2],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["9.97969 * pixelGrid * pixelW","1.73333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"2","button2","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","1.73333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"1","button1","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["17.9634 * pixelGrid * pixelW","1.73333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"3","button3","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","6.93333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"4","button4","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["9.97969 * pixelGrid * pixelW","6.93333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"5","button5","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["17.9634 * pixelGrid * pixelW","6.93333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"6","button6","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","17.3333 * pixelGrid * pixelH","21.9553 * pixelGrid * pixelW","12.1333 * pixelGrid * pixelH"],"resultat: ","affichage","","OOP_Edit",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["1.99594 * pixelGrid * pixelW","12.1333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"7","button7","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["9.97969 * pixelGrid * pixelW","12.1333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"8","button8","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]],[[["17.9634 * pixelGrid * pixelW","12.1333 * pixelGrid * pixelH","5.98781 * pixelGrid * pixelW","3.46667 * pixelGrid * pixelH"],"9","button9","","OOP_Button",true,[],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1]]]]]]]
 */
+
 
