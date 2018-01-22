@@ -1,5 +1,5 @@
 namespace typesqf.examples {
-	public class Crowd {
+	public class Crowd : world {
 		private fields ["_mareamarker" as String, "_munits" as Array, "_mnumber" as Scalar];
 
 		public constructor {
@@ -9,7 +9,7 @@ namespace typesqf.examples {
 			_self.allworlds = "JIM";
 		};
 
-		public property String allworlds { get; private set; };
+		public property String allworlds { get; set; };
 
 		public method getText{
 			_mareamarker;
@@ -26,6 +26,7 @@ namespace typesqf.examples {
 		
 		public static method BlowUpTank {
 			params ["_tank" as Crowd];
+			if (_tank is Crowd) then {};
 			hint "BOOM!";
 		};
 	};

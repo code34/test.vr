@@ -1,0 +1,19 @@
+/*
+ * Name:	world
+ * Date:	22/01/2018
+ * Version: 1.0
+ * Author:  %AUTHOR%
+ *
+ * Description:
+ * %DESCRIPTION%
+ */
+namespace typesqf.examples
+{
+	public interface world
+	{
+		property String allworlds { get; set; };
+		method getArray;
+		method getText;
+	};
+};
+

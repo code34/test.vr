@@ -2,7 +2,7 @@
 
 
 
-cl_typesqf_examples_Crowd_constructor = { private "_class_fields"; _class_fields = [["typesqf_examples_Crowd", []]];
+cl_typesqf_examples_Crowd_constructor = { private "_class_fields"; _class_fields = [["typesqf_examples_Crowd", ["typesqf.examples.world"]]];
     _class_fields set [1, "hello"];
     _class_fields set [2, []];
     _class_fields set [3, 0];
@@ -26,4 +26,5 @@ cl_typesqf_examples_Crowd_add = { params ["_class_fields", "_this"];
 
 typesqf_examples_Crowd_BlowUpTank = { 
     params ["_tank"];
-    hint "BOOM!";};
+    if ((typeName _tank == "ARRAY" && { typeName (_tank select 0) == "ARRAY" } && { (_tank select 0) select 0 == "typesqf_examples_Crowd" })) then { };
+    hint "BOOM!"; };
