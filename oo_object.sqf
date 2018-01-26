@@ -5,6 +5,9 @@ CLASS("OO_OBJECT")
 	PUBLIC FUNCTION("","constructor") {
 		MEMBER("papamaman", "hello world");
 	};
+	PUBLIC FUNCTION("", "set") {
+		MEMBER("mavariable", nil);
+	};
 	PUBLIC FUNCTION("","deconstructor") {
 		
 	};
