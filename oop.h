@@ -58,11 +58,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPAWNCLASS(className,member,args,access) (if(isNil "_oopOriginCall")then{ [_classID, member, SAFE_VAR(args),access] spawn GETCLASS(className) }else{ [_classID, member, SAFE_VAR(args),access] spawn GETCLASS(_oopOriginCall)})
 #define CALLCLASS_FROMCHILD(className,member,args,access,origin) ([_classID, member, SAFE_VAR(args), access, origin] call GETCLASS(className))
 
-#define VAR_DFT_FUNC(varName) {if (isNil "_this") then {NAMESPACE getVariable [GETVAR(varName), nil]} else {NAMESPACE setVariable [GETVAR(varName), _this]};}
-#define UIVAR_DFT_FUNC(varName) {if (isNil "_this") then {UINAMESPACE getVariable [GETVAR(varName), nil]} else {UINAMESPACE setVariable [GETVAR(varName), _this]};}
+#define VAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {NAMESPACE getVariable [GETVAR(varName), nil]}; NAMESPACE setVariable [GETVAR(varName), _this];}
+#define UIVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {UINAMESPACE getVariable [GETVAR(varName), nil]}; UINAMESPACE setVariable [GETVAR(varName), _this];}
 
-#define SVAR_DFT_FUNC(varName) {if (isNil "_this") then {NAMESPACE getVariable [GETSVAR(varName), nil]} else {NAMESPACE setVariable [GETSVAR(varName), _this]};}
-#define SUIVAR_DFT_FUNC(varName) {if (isNil "_this") then {UINAMESPACE getVariable [GETSVAR(varName), nil]} else {UINAMESPACE setVariable [GETSVAR(varName), _this]};}
+#define SVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {NAMESPACE getVariable [GETSVAR(varName), nil]}; {NAMESPACE setVariable [GETSVAR(varName), _this];}
+#define SUIVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {UINAMESPACE getVariable [GETSVAR(varName), nil]}; {UINAMESPACE setVariable [GETSVAR(varName), _this];}
 
 #define VAR_DELETE(varName) (NAMESPACE setVariable [GETVAR(varName), nil])
 #define UIVAR_DELETE(varName) (UINAMESPACE setVariable [GETVAR(varName), nil])
