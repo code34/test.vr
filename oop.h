@@ -46,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CHECK_THIS if (isNil "_this") then {_this = []} else {if !(_this isEqualType []) then {_this = [_this]}}
 
 #define CHECK_ACCESS(lvl) case ((_access >= lvl) &&
-#define CHECK_TYPE(typeStr) ((_argType== typeStr) || {typeStr == "ANY"})
+#define CHECK_TYPE(typeStr) ((_argType == typeStr) || {typeStr == "ANY"})
 #define CHECK_NIL (_argType isEqualTo "")
 #define CHECK_MEMBER(name) (_member == name)
 #define CHECK_VAR(typeStr,varName) {CHECK_MEMBER(varName)} && {CHECK_TYPE(typeStr) || CHECK_NIL}
@@ -61,8 +61,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {NAMESPACE getVariable [GETVAR(varName), nil]}; NAMESPACE setVariable [GETVAR(varName), _this];}
 #define UIVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {UINAMESPACE getVariable [GETVAR(varName), nil]}; UINAMESPACE setVariable [GETVAR(varName), _this];}
 
-#define SVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {NAMESPACE getVariable [GETSVAR(varName), nil]}; {NAMESPACE setVariable [GETSVAR(varName), _this];}
-#define SUIVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {UINAMESPACE getVariable [GETSVAR(varName), nil]}; {UINAMESPACE setVariable [GETSVAR(varName), _this];}
+#define SVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {NAMESPACE getVariable [GETSVAR(varName), nil]}; NAMESPACE setVariable [GETSVAR(varName), _this];}
+#define SUIVAR_DFT_FUNC(varName) {if (isNil "_this") exitWith {UINAMESPACE getVariable [GETSVAR(varName), nil]}; UINAMESPACE setVariable [GETSVAR(varName), _this];}
 
 #define VAR_DELETE(varName) (NAMESPACE setVariable [GETVAR(varName), nil])
 #define UIVAR_DELETE(varName) (UINAMESPACE setVariable [GETVAR(varName), nil])
