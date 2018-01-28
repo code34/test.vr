@@ -46,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CHECK_THIS if (isNil "_this") then {_this = []} else {if !(_this isEqualType []) then {_this = [_this]}}
 
 #define CHECK_ACCESS(lvl) case ((_access >= lvl) &&
-#define CHECK_TYPE(typeStr) ((_argType == typeStr) || {typeStr == "ANY"})
+#define CHECK_TYPE(typeStr) ((_argType isEqualTo toUpper(typeStr)) || {toUpper(typeStr) isEqualTo "ANY"})
 #define CHECK_NIL (_argType isEqualTo "")
 #define CHECK_MEMBER(name) (_member == name)
 #define CHECK_VAR(typeStr,varName) {CHECK_MEMBER(varName)} && {CHECK_TYPE(typeStr) || CHECK_NIL}
@@ -54,8 +54,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define GETVAR(var) (_classID + "_" + var)
 #define GETSVAR(var) (_class + "_" + var)
 #define GETCLASS(className) (NAMESPACE getVariable [className, {nil}])
-#define CALLCLASS(className,member,args,access) (if(isNil "_oopOriginCall")exitWith{[_classID, member, SAFE_VAR(args),access] call GETCLASS(className)};[_classID, member, SAFE_VAR(args),access] call GETCLASS(_oopOriginCall))
-#define SPAWNCLASS(className,member,args,access) (if(isNil "_oopOriginCall")exitWith{[_classID, member, SAFE_VAR(args),access] spawn GETCLASS(className)};[_classID, member, SAFE_VAR(args),access] spawn GETCLASS(_oopOriginCall))
+#define CALLCLASS(className,member,args,access) (if(isNil "_oopOriginCall")then{ [_classID, member, SAFE_VAR(args),access] call GETCLASS(className) }else{ [_classID, member, SAFE_VAR(args),access] call GETCLASS(_oopOriginCall)})
+#define SPAWNCLASS(className,member,args,access) (if(isNil "_oopOriginCall")then{ [_classID, member, SAFE_VAR(args),access] spawn GETCLASS(className) }else{ [_classID, member, SAFE_VAR(args),access] spawn GETCLASS(_oopOriginCall)})
 #define CALLCLASS_FROMCHILD(className,member,args,access,origin) ([_classID, member, SAFE_VAR(args), access, origin] call GETCLASS(className))
 
 #define VAR_DFT_FUNC(varName) {if (isNil "_this") then {NAMESPACE getVariable [GETVAR(varName), nil]} else {NAMESPACE setVariable [GETVAR(varName), _this]};}
